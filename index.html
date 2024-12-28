@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Tip Calculator App</title>
+  </head>
+  <body>
+    <!-- Mobile view -->
+    <div class="md:hidden">
+      <header class="bg-Lightgrayishcyan flex items-center justify-center">
+        <div class="py-[50px]">
+          <img src="images/logo.svg" alt="" id="test" />
+        </div>
+      </header>
+      <section class="bg-white px-7 -mt-4 rounded-t-[35px] py-5">
+        <div class="flex flex-col space-y-2 relative">
+          <p class="text-Darkgrayishcyan font-bold text-[20px]">Biils</p>
+          <input
+            type="text"
+            class="rounded-md px-5 py-4 bg-Verylightgrayishcyan text-end text-3xl text-verydarkcyan font-bold"
+            id="mobile-bill-input"
+          />
+          <img
+            src="images/icon-dollar.svg"
+            alt=""
+            class="h-[25px] w-[25px] absolute bottom-5 left-5"
+          />
+        </div>
+        <div class="flex flex-col mt-8 space-y-3">
+          <p class="text-Darkgrayishcyan font-bold text-[20px]">Select Tip %</p>
+          <aside class="flex flex-col space-y-4">
+            <div class="flex flex-row space-x-4 justify-center items-center">
+              <button
+                class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-14 py-3"
+                id="mobile-five-percent-btn"
+              >
+                5%
+              </button>
+              <button
+                class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                id="mobile-ten-percent-btn"
+              >
+                10%
+              </button>
+            </div>
+            <div class="flex flex-row space-x-4 justify-center items-center">
+              <button
+                class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                id="mobile-fifteen-percent-btn"
+              >
+                15%
+              </button>
+              <button
+                class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                id="mobile-twentyfive-percent-btn"
+              >
+                25%
+              </button>
+            </div>
+            <div class="flex flex-row space-x-4 justify-center items-center">
+              <button
+                class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                id="mobile-fifty-percent-btn"
+              >
+                50%
+              </button>
+              <input
+                class="bg-Verylightgrayishcyan text-3xl rounded-md border-none w-[150px] py-3 px-3 text-end text-verydarkcyan font-bold"
+                placeholder="Custom"
+                id="mobile-custom-percent-btn"
+              />
+            </div>
+          </aside>
+        </div>
+        <div class="flex flex-col space-y-2 relative mt-4">
+          <div class="flex flex-row justify-between">
+            <p class="text-Darkgrayishcyan font-bold text-[20px]">
+              Number of people
+            </p>
+            <p class="text-red-600 font-bold hidden" id="mobile-error-msg">
+              Can't be Zero
+            </p>
+          </div>
+
+          <input
+            type="text"
+            class="rounded-md px-5 py-4 bg-VeryLightgrayishcyan text-end text-3xl text-verydarkcyan font-bold"
+            id="mobile-people-input"
+          />
+          <img
+            src="images/icon-person.svg"
+            alt=""
+            class="h-[25px] w-[25px] absolute bottom-5 left-5"
+          />
+        </div>
+        <div
+          class="bg-verydarkcyan rounded-lg mt-6 px-8 py-5 flex flex-col space-y-10 relative"
+        >
+          <div class="flex flex-row justify-between">
+            <p class="text-2xl text-white">Tip Amount</p>
+            <span
+              class="text-[16px] text-Lightgrayishcyan absolute bottom-[245px] left-8"
+            >
+              / person</span
+            >
+            <h1 class="text-4xl text-Strongcyan tip" id="mobile-tip">$0.00</h1>
+          </div>
+          <div class="flex flex-row justify-between">
+            <p class="text-2xl text-white">Total</p>
+            <span
+              class="text-[16px] text-Lightgrayishcyan absolute bottom-[170px] left-8"
+            >
+              / person</span
+            >
+            <h1 class="text-4xl text-Strongcyan" id="mobile-total">$0.00</h1>
+          </div>
+          <div class="">
+            <button
+              class="bg-Strongcyan px-5 py-5 w-[100%] mt-[50px] rounded-md text-verydarkcyan text-3xl font-bold"
+              id="mobile-reset-btn"
+            >
+              RESET
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Desktop view -->
+    <div class="hidden md:block">
+      <section
+        class="sm:hidden md:flex md:flex-col md:items-center md:justify-center md:h-[100vh] bg-Lightgrayishcyan"
+      >
+        <div class="py-[50px]">
+          <img src="images/logo.svg" alt="" id="test" />
+        </div>
+        <div
+          class="md:flex md:flex-row space-x-6 bg-white rounded-xl px-6 py-6 sm:hidden"
+        >
+          <div
+            class="md:md:flex flex-col space-y-2 relative md:basis-[45%] sm:hidden"
+          >
+            <p class="text-Darkgrayishcyan font-bold text-[20px]">Biils</p>
+            <input
+              type="text"
+              class="rounded-md px-5 py-4 bg-Verylightgrayishcyan text-end text-3xl text-verydarkcyan font-bold outline-none"
+              id="bill-input"
+            />
+            <img
+              src="images/icon-dollar.svg"
+              alt=""
+              class="h-[25px] w-[25px] absolute bottom-[320px] left-5"
+            />
+            <div class="flex flex-col mt-8 space-y-3">
+              <p class="text-Darkgrayishcyan font-bold text-[20px]">
+                Select Tip %
+              </p>
+              <aside class="flex flex-col space-y-4">
+                <div
+                  class="flex flex-row space-x-4 justify-center items-center"
+                >
+                  <button
+                    class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-14 py-3"
+                    id="five-percent-btn"
+                  >
+                    5%
+                  </button>
+                  <button
+                    class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                    id="ten-percent-btn"
+                  >
+                    10%
+                  </button>
+                  <button
+                    class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                    id="fifteen-percent-btn"
+                  >
+                    15%
+                  </button>
+                </div>
+                <div
+                  class="flex flex-row space-x-4 justify-center items-center"
+                >
+                  <button
+                    class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                    id="twentyfive-percent-btn"
+                  >
+                    25%
+                  </button>
+                  <button
+                    class="bg-verydarkcyan text-3xl text-white rounded-md border-none px-12 py-3"
+                    id="fifty-percent-btn"
+                  >
+                    50%
+                  </button>
+                  <input
+                    class="bg-Verylightgrayishcyan text-3xl rounded-md border-none w-[150px] py-3 px-3 text-end text-verydarkcyan font-bold"
+                    placeholder="Custom"
+                    id="custom-percent-btn"
+                  />
+                </div>
+              </aside>
+            </div>
+            <div class="flex flex-col space-y-2 relative mt-4">
+              <div class="flex flex-row justify-between">
+                <p class="text-Darkgrayishcyan font-bold text-[20px]">
+                  Number of people
+                </p>
+                <p
+                  class="text-red-600 font-bold text-[20px] hidden"
+                  id="error-msg"
+                >
+                  Can't be zero
+                </p>
+              </div>
+
+              <input
+                type="text"
+                class="rounded-md px-5 py-4 bg-Verylightgrayishcyan text-end text-3xl text-verydarkcyan font-bold outline-none"
+                id="people-input"
+              />
+              <img
+                src="images/icon-person.svg"
+                alt=""
+                class="h-[25px] w-[25px] absolute bottom-5 left-5"
+              />
+            </div>
+          </div>
+          <div
+            class="bg-verydarkcyan rounded-lg px-8 py-5 flex flex-col space-y-10 relative basis-[45%]"
+          >
+            <div class="flex flex-row justify-between space-x-5">
+              <p class="text-2xl text-white">Tip Amount</p>
+              <span
+                class="text-[16px] text-Lightgrayishcyan absolute bottom-[325px] left-4"
+              >
+                / person</span
+              >
+              <h1 class="text-4xl text-Strongcyan font-bold" id="tip">$0.00</h1>
+            </div>
+            <div class="flex flex-row justify-between">
+              <p class="text-2xl text-white">Total</p>
+              <span
+                class="text-[16px] text-Lightgrayishcyan absolute bottom-[250px] left-8"
+              >
+                / person</span
+              >
+              <h1 class="text-4xl text-Strongcyan font-bold" id="total">
+                $0.00
+              </h1>
+            </div>
+            <div class="">
+              <button
+                class="bg-Strongcyan px-5 py-5 w-[100%] mt-[120px] rounded-md text-verydarkcyan text-3xl font-bold hover:bg-Lightgrayishcyan"
+                id="reset-btn"
+              >
+                RESET
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
