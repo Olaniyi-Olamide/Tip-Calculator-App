@@ -586,6 +586,26 @@ video {
   left: 2rem;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.left-6 {
+  left: 1.5rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.bottom-\[248px\] {
+  bottom: 248px;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -784,6 +804,11 @@ video {
 .py-\[50px\] {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .text-end {
