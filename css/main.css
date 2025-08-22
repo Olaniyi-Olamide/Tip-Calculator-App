@@ -578,10 +578,6 @@ video {
   bottom: 250px;
 }
 
-.bottom-\[320px\] {
-  bottom: 320px;
-}
-
 .bottom-\[325px\] {
   bottom: 325px;
 }
@@ -646,8 +642,12 @@ video {
   width: 25px;
 }
 
-.basis-\[45\%\] {
-  flex-basis: 45%;
+.w-\[45\%\] {
+  width: 45%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .flex-row {
@@ -906,25 +906,59 @@ input:focus {
   background-color: hsl(185 41% 84% / var(--tw-bg-opacity, 1));
 }
 
-@media (min-width: 480px) {
+@media (min-width: 360px) {
+  .sm\:bottom-5 {
+    bottom: 1.25rem;
+  }
+
+  .sm\:right-6 {
+    right: 1.5rem;
+  }
+
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:w-\[100\%\] {
+    width: 100%;
+  }
+
+  .sm\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+  }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .sm\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .sm\:text-\[1rem\] {
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 768px) {
+  .md\:bottom-\[320px\] {
+    bottom: 320px;
+  }
+
+  .md\:right-0 {
+    right: 0px;
+  }
+
   .md\:block {
     display: block;
   }
 
   .md\:flex {
     display: flex;
-  }
-
-  @media (min-width: 768px) {
-    .md\:md\:flex {
-      display: flex;
-    }
   }
 
   .md\:hidden {
@@ -935,23 +969,65 @@ input:focus {
     height: 100vh;
   }
 
-  .md\:basis-\[45\%\] {
-    flex-basis: 45%;
+  .md\:w-\[100px\] {
+    width: 100px;
+  }
+
+  .md\:w-\[50\%\] {
+    width: 50%;
   }
 
   .md\:flex-row {
     flex-direction: row;
   }
 
-  .md\:flex-col {
-    flex-direction: column;
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
-  .md\:items-center {
-    align-items: center;
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
-  .md\:justify-center {
-    justify-content: center;
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-\[1\.4rem\] {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:w-\[150px\] {
+    width: 150px;
+  }
+
+  .lg\:w-\[55\%\] {
+    width: 55%;
+  }
+
+  .lg\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .lg\:px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
